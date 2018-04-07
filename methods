@@ -1,0 +1,47 @@
+import hashlib
+
+def encrypt_names(name_list):
+    name = input("What is your first and last name? ")
+    key = hashlib.sha256(str(name).encode('utf-8')).hexdigest()
+    name_list.append(key)
+    return name_list
+    
+
+def poverty_level_calculator(state, persons_over_eight, income):
+    poverty = False
+    if state.lowercase() == 'hawaii':
+        if income < 1.25 * (13960 + (persons * 4970)):
+            poverty = True
+    elif state.lowercase() == 'alaska':
+        if income < 1.25 * (15180 + (persons * 5400)):
+            poverty = True
+    else:
+        if income < 1.25 * (12140 + (persons * 4320)):
+            poverty = True
+    return poverty
+
+#how many things you have completed
+def eligible():
+    eligibility = False
+    q1 = input("Have you ever been convictd of a felony, three or more misdemeanors, unlawful voting, or an offense under foreign law? (y/n) " )
+    q2 = input("Does the Department of Homeland Security see you as a potential terrorist? (y/n) ")
+    q3 = input("Did you just move to the US in 2017 or 2018? (y/n) ")
+    q4 = input("Did you live in another country in 2017 or 2018? (y/n) ")
+    if (q1.startswith("n") and q2.startswith("n") and q3.startswith("n") and q4.startswith("n")):
+        eligibility = True
+    return eligibility
+
+
+def updateBlock():
+    #days_out_of_country
+    #consecutive_days
+    #greater_lesser_than_poverty
+    #civics_english
+    #append to the dictionary, look at the states of the variables, if they are the same, don't overwrite
+    
+               #most recently filled block for that person
+    
+    #hash that is a public key that is not tied to their identity
+    #
+    #make a methodd that takes the hash and has a password for clearance to 
+               
